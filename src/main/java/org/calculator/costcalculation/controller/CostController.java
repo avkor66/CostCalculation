@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @AllArgsConstructor
-@RequestMapping("/cost")
+@RequestMapping("/")
 public class CostController {
     record HealthResponse(String status) {}
 

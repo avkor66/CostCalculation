@@ -1,6 +1,8 @@
 package org.calculator.costcalculation.service;
 
-import org.calculator.costcalculation.dto.BlankPriceRequest;
+import org.calculator.costcalculation.dto.BlankPriceBoltRequest;
+import org.calculator.costcalculation.dto.BlankPriceNutRequest;
+import org.calculator.costcalculation.dto.BlankPriceWasherRequest;
 import org.calculator.costcalculation.dto.BlankPriceResponse;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -16,10 +18,27 @@ public class BlankService {
         this.serviceConfig = serviceConfig;
     }
 
-    public BlankPriceResponse getBlankPrice(BlankPriceRequest request) {
+    public BlankPriceResponse getBlankWasherPrice(BlankPriceWasherRequest request) {
 
         return restTemplate.postForObject(
                 serviceConfig.getMaterialPrice() + "/hardware/washers/price",
+                request,
+                BlankPriceResponse.class
+        );
+    }
+    public BlankPriceResponse getBlankBoltPrice(BlankPriceBoltRequest request) {
+
+        return restTemplate.postForObject(
+                serviceConfig.getMaterialPrice() + "/hardware/bolt/price",
+                request,
+                BlankPriceResponse.class
+        );
+    }
+
+    public BlankPriceResponse getBlankNutPrice(BlankPriceNutRequest request) {
+
+        return restTemplate.postForObject(
+                serviceConfig.getMaterialPrice() + "/hardware/nut/price",
                 request,
                 BlankPriceResponse.class
         );

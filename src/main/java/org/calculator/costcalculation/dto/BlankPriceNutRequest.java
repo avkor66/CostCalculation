@@ -5,10 +5,13 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class BlankPriceRequest {
+public class BlankPriceNutRequest {
     private String species;
-    private Number outerDiameter;
     private String diameter;
     private String steelGrade;
     private Number quantity;
+    private Number threadPitch;
+    private Number height;
+    private Number sawCut;
+    private String stateStandard;
 }

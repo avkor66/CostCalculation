@@ -1,12 +1,15 @@
 package org.calculator.costcalculation.dto;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class CalculationRequest {
+public class CalculationResult {
     private String cartId;
     private Number height;
     private Number outerDiameter;
